@@ -1,0 +1,45 @@
+1. Class -->mekanisme yang mengikat anggota data dan metode terkait dalam satu unit. Class digunakan sebagai kerangka dasar yang akan menampung gambaran umum suatu object. Keberadaan class merupakan keberadaan logis.
+Contoh :
+<?php
+
+class User
+{
+    public $email; // deklarasi property
+    public $password;
+
+    public function login() // declarasi method
+    {
+        return 'logging in ..';
+    }
+
+    public function logout()
+    {
+        return 'logging out ...';
+    }
+}
+
+Class menampung object user yang berisi : property dan method.
+
+
+2.  Object --> objek adalah elemen (atau contoh) dari sebuah kelas; objek memiliki perilaku kelas mereka. Tujuannya adalah komponen yang sebenarnya dari program, sedangkan kelas menentukan bagaimana elemen diciptakan dan bagaimana mereka berperilaku. Keberadaan Object merupakan keberadaan fisik. Object juga merupakan hasil yang konkrit dari sebuah class
+
+Contoh :
+Object user terdiri dari komponen email dan pasword. Tindakan yang dapat dilakukan adalah login dan logout. Komponen disebut property sedangkan tindakan disebut method.
+
+
+3. Untuk pemanggilan class
+Contoh:
+<?php
+
+require 'User.php'; // mengimport dari class User 
+
+$budi = new User(); // proses instansiasi object atau membuat object baru dari sebuah class
+$budi->email = 'budi@gmail.com';
+$budi->password = 'eqwjqiAOd121';
+
+$jono = new User();
+$jono->email = 'jono@gmail.com';
+$jono->password = 'qeqjAOJq12';
+
+var_dump($budi->login()); //method atau tindakan yang digunakan
+?>
