@@ -1,0 +1,27 @@
+1. Copy Object  --> Menyalin object dengan referensi bukan berdasarkan nilai. Sehingga object saling berkaitan. Dima jika object utama diubah maka object referensi akan terpengaruh begit juga sebaliknya.
+Contoh :
+<?php
+
+require 'User.php';
+
+$budi = new User();
+$budi->setEmail('budi@email.com');
+$budi->setPassword('12121221');
+
+$andri = $budi; //copy object budi ke andri
+// ketika kita set email pada object andri maka kedua value email dari object budi dan andri berubah
+$andri->setEmail('andri@email.com');
+
+2. Cloning Object --> Menyalin object dimana object referensi tidak menrujuk ke object aslinya. Sehingga object tidak saling berkaitan dan apapun perubahan yang terjadi pada object asli tidak mempengaruhi object referensi begitu juga sebaliknya.
+Contoh :
+<?php
+
+require 'User.php';
+
+$budi = new User();
+$budi->setEmail('budi@email.com');
+$budi->setPassword('12121221');
+
+$bowo = clone $budi; // clone object budi ke bowo
+// ketika kita set email pada object bowo maka email pada object budi tidak berubah
+$bowo->setEmanil('bowo@email.com');

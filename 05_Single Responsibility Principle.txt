@@ -1,0 +1,3 @@
+Single responbility principle --> memecah suatu class menjadi beberapa kelompok sesuai fungsi dan kebutuhannya agar lebih terstruktur. Setiap kelas yang dikelompokkan masing-masing memiliki satu tanggung jawab perubahan dengan satu alasan untuk berubah.
+Contoh :
+Class ini dikelompokkan menjadi 3 class yaitu : Helper, User dan Validator. Ketiga class ini kemudian di[anggil ke dalam class pemanggilan yang sama.

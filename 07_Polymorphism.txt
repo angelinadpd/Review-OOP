@@ -1,0 +1,56 @@
+Polymorphism berasal dari kata :
+1. Poly --> banyak
+2. moprh --> bentuk
+3. isme --> aliran atau pedoman
+
+Polymorphism --> pedoman untuk merubah bentuk. Sehingga terdapat konsep dimana terdapat banyak class yang memiliki signature method yang sama.
+Polymorphism mempunyai konsep fundamental dimana class-class mempunyai fungsi yang berbeda akan tetapi berbagi interface yang sama.
+Implementasi dari method-method tersebut diserahkan kepada tiap class, akan tetapi cara pemanggilan method harus sama. Agar kita dapat ‘memaksakan’ signature method yang sama pada banyak class, class tersebut harus diturunkan dari sebuah abstract class atau object interface.
+
+1. Abstract Class
+Abstract Class biasanya dibuat untuk diturunkan ke Class lain. Dengan kata lain Abstract Class akan berisi semua hal paling general dari Class-Class anaknya. Seperti Class pada umumnya, Abstract Class juga bisa mempunyai properties,hak akses,dan method namun Abstract Class tidak bisa dibuatkan Object nya sendiri.
+Untuk pemanggilannya abstract menggunakan extends.
+Contoh :
+<?php
+
+require_once 'Kendaraan.php';
+/*
+ * Class Mobil merupakan hasil turunan dari class Kendaraan,
+ * karena Mobil merupakan sebuah kendaraan.
+ *
+ * Sehingga class Mobil akan meng-extends class Kendaraan, dengan
+ * menambah 'extends' pada saat pembuatan class Mobil.
+ */
+
+class Mobil extends Kendaraan
+{
+    public function nyalakanMesin()
+    {
+        echo 'Mesin menyala....'.PHP_EOL;
+    }
+}
+
+
+2. Object Interface
+Interface memiliki konsep sama dengan Class yakni tidak ada kode-kode didalamnya. Dan hanya boleh ada Method dan Argument  dan lagi tidak boleh ada kode didalam method-method tersebut. Jika suatu class ingin menggunakan Interface maka semua method yang ada di interface harus terdapat di dalam Class tersebut. interface menggunakan implements untuk pemanggilannya.
+Contoh :
+<?php
+
+require 'Buah.php';
+/*
+ * Class Jeruk membutuhkan class Buah, karena Jeruk merupakan buah.
+ * Sehingga class jeruk akan meng-implementasikan class Buah, dengan
+ * menambah 'implements' pada saat pembuatan class Jeruk.
+ */
+
+class Jeruk implements Buah
+{
+    /* Jika method ini tidak di deklarasikan ulang,
+     * maka akan muncul error
+     */
+
+    public function ambilWarna()
+    {
+        echo 'Warna Jeruk adalah Orange';
+    }
+}

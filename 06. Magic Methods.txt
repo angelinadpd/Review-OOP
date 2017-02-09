@@ -1,0 +1,46 @@
+Dalam php ada beberapa method yang dinamai method magic. Method ini diawali dengan "double underscore (_)". Magic --> method dengan fungsi khusus dan merupakan salah satu fitur dalam pemrograman OOP. Tidak dibenarkan membuat function dengan nama yang sama dengan method magic.
+Contoh method magic :
+1. _construct()
+->method untuk membuat konstruktor sebuah class. Dapat digunakan untuk membuat object sekaligus propertinya.
+
+2. _destruct()
+->untuk memusnahkan properti pada object setelah exit / unset object.
+
+3. _call()
+-> digunakan saat memanggil method yang tidak dapat diakses (inaccessible method) dalam object.
+
+4. _callStatic()
+-> digunakan saat memanggil method yang tidak dapat diakses (inaccessible method) dalam static.
+
+5. _get()
+-> digunakan untuk membaca data dari properti yang tidak dapat diakses (inaccessible property).
+
+6. _set()
+-> digunakan untuk menulis data pada properti yang tidak dapat diakses (inaccessible property).
+
+7. _isset()
+-> method yang dipicu dengan memanggil mettod isset() dan empty() pada properti yang tidak dapat diakses (inaccessible property).
+
+8. _unset()
+->  method yang dipicu dengan memanggil mettod unset() pada properti yang tidak dapat diakses (inaccessible property).
+
+9. _sleep()
+-> method yang dipanggil saat proses serialisasi object melalui function serialize(). Jadi proses serialis mengecek apakak sebuah class method _sleep) didalamnya. Jika ya, maka function akan dijalankan sebelum proses serialisasi.
+
+10. _wakeup()
+-> kebalikan methos _sleep(). _wakeup() digunakan saat proses unserialisasi dengan function unserialize(). Berfungsi untuk membangun kembali resource yang mungkin hilang setelah proses serialisasi.
+
+11. _toString()
+-> memungkinkan sebuah class memutuskan bagaimana ia akan bereaksi bila diperlakukan sebagai string.
+
+12. _invoke()
+->  method yang dipakai ketika sebuah scrip mencoba menghubungi object sebagai functiion.
+
+13. _set_state()
+-> method yang dipakai untuk mengeksport class dnegan function var_export(), yaitu function yang mengeksport properti dalam method ke dalam array('property'=>value,....).
+
+14. _clone()
+-> method yang dipakai untuk membuat salinan object.
+
+15. _debigInfo()
+-> method yang dipanggil oleh function var_dump() ketika proses dumping object untuk memperoleh properti yang harus ditampilkan.
